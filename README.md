@@ -11,3 +11,9 @@ npm install -g typescript@4.8.* ts-node
 [Run Code](https://marketplace.visualstudio.com/items?itemName=TypeScriptTeam.ts-node-dev)
 
  After install, select all code of `composition-root.ts`, press right button and select `Run Code` option.
+
+
+
+## :memo: License
+
+All the credits of this are for [Gentleman-Programming](https://github.com/Gentleman-Programming) ❤️
