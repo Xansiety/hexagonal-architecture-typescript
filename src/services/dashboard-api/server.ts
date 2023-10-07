@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use(
-  'http://localhost:4000/trpc',
+  '/trpc', // only handle requests to /trpc not need add /api/trpc or something like that http://localhost:4000/api/trpc X
   trcpExpress.createExpressMiddleware({
     router: localTRPCCompose().appRouter,
     createContext

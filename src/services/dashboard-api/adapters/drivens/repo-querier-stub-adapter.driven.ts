@@ -4,7 +4,7 @@ import { ForRepoQuerying } from '../../ports/drivens';
 
 const userMock: ExternalUser = {
   id: '1',
-  name: 'John Doe',
+  name: 'John Doe Mock',
   email: 'jhon@gmail.com'
 };
 

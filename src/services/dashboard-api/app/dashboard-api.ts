@@ -17,9 +17,7 @@ export class DashboardApi implements ForAuthenticating {
       ...user,
       ...authDetails, 
       permissions,
-    };
-
-    console.log('LOGIN result', result);
+    }; 
     return result;
   }
 
@@ -32,9 +30,7 @@ export class DashboardApi implements ForAuthenticating {
       ...newUser,
       ...authDetails,
       permissions,
-    };
-
-    console.log('REGISTER result', result);
+    }; 
     return result;
   }
 }

@@ -7,7 +7,15 @@ export function authTRPCAdapterDriver(dashboardApi: DashboardApi, trcp: ReturnTy
     login: trcp.procedure
       .input(RegisterSchema.pick({ email: true, password: true }))
       .output(AuthenticatedUserSchema)
-      .mutation(({ input }) => dashboardApi.login(input.email, input.password)),
+      .mutation(({ input }) => {
+        // this can help to avoid the need to create a new schema if in the client the property names are different to schema zod names
+        const { mail } = {
+          ...input,
+          mail: input.email
+        };
+        
+        return dashboardApi.login(mail, input.password);
+      }),
     register: trcp.procedure
       .input(RegisterSchema)
       .output(AuthenticatedUserSchema)

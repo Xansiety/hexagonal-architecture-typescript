@@ -22,6 +22,7 @@ export class Repository implements ForManagingUserDriver {
   }
 
   createUser(_user: User): Promise<ExternalUser> {
+    console.log('Repository.createUser', _user);
     const user = this.userList.find((user) => user.email === _user.email);
     if (user) {
       this.logger.log('CreateUser', 'User already exists');
