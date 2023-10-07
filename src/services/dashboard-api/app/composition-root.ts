@@ -16,4 +16,4 @@ const compositionMock = () => {
 export const { authenticatorProxyAdapter } = compositionMock();
 
 authenticatorProxyAdapter.login('jhon@gmail.com', '123456');
-authenticatorProxyAdapter.register({ name: 'jhon', email: 'jhon@gmail.com' }, '123456');
+authenticatorProxyAdapter.register({ name: 'jhon', email: 'jhon@gmail.com', password: 'password' });
