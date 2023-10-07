@@ -8,6 +8,8 @@ export interface AuthenticatedUser {
   permissions: Permissions;
 }
 
-export type User = Pick<AuthenticatedUser, 'email' | 'name'>;
+export interface User extends Pick<AuthenticatedUser, 'email' | 'name'>{
+  password: string;
+}
 
 // export type User = Omit<AuthenticatedUser, 'id', 'token', 'refreshToken'>;

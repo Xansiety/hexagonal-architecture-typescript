@@ -23,10 +23,10 @@ export class DashboardApi implements ForAuthenticating {
     return result;
   }
 
-  async register(user: User, password: string): Promise<AuthenticatedUser> {
-    const newUser = await this.repoQuerier.createUser(user, password);
-    const authDetails = await this.controlAuthenticator.getAuthDetails(newUser.email, password);
-    const permissions = await this.controlAuthenticator.getPermissions(newUser.email, password);
+  async register(user: User): Promise<AuthenticatedUser> {
+    const newUser = await this.repoQuerier.createUser(user);
+    const authDetails = await this.controlAuthenticator.getAuthDetails(newUser.email, user.password);
+    const permissions = await this.controlAuthenticator.getPermissions(newUser.email, user.password);
 
     const result = {
       ...newUser,

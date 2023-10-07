@@ -16,7 +16,7 @@ describe('Dashboard API', () => {
     // GIVEN
     const mockedParams = {
       email: 'jhon@gmail.com',
-      password: '123456'
+      password: 'password'
     };
 
     const expectedResult: AuthenticatedUser = {
@@ -42,9 +42,9 @@ describe('Dashboard API', () => {
     // GIVEN
     const mockedUserParams: User = {
       email: 'jhon@gmail.com',
-      name: 'John Doe'
-    };
-    const mockedPassword = '123456';
+      name: 'John Doe',
+      password: 'password'
+    }; 
 
     const expectedResult: AuthenticatedUser = {
       id: '1',
@@ -59,10 +59,9 @@ describe('Dashboard API', () => {
     };
 
     // WHEN
-    const result = await dashboardApiMock.register(mockedUserParams, mockedPassword);
+    const result = await dashboardApiMock.register(mockedUserParams);
 
     // THEN
     expect(result).toEqual(expectedResult);
-
   });
 });
