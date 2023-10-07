@@ -3,7 +3,9 @@ import { ForAuthenticating } from '../ports';
 import { ForControlAuthenticating, ForRepoQuerying } from '../ports/drivens';
 import { AuthenticatedUser, User } from './schemas';
 
+// ForAuthenticating is the driver port due to is the contract that the driver adapter must implement, detail the contract
 export class DashboardApi implements ForAuthenticating {
+  // ForControlAuthenticating and ForRepoQuerying are the driven ports due to are  resources, adapter to comunícate with another hexagon
   constructor(private readonly controlAuthenticator: ForControlAuthenticating, private readonly repoQuerier: ForRepoQuerying) {}
 
   async login(email: string, password: string): Promise<AuthenticatedUser> {
@@ -13,8 +15,8 @@ export class DashboardApi implements ForAuthenticating {
 
     const result = {
       ...user,
-      ...authDetails,
-      ...permissions
+      ...authDetails, 
+      permissions,
     };
 
     console.log('LOGIN result', result);
@@ -29,7 +31,7 @@ export class DashboardApi implements ForAuthenticating {
     const result = {
       ...newUser,
       ...authDetails,
-      ...permissions
+      permissions,
     };
 
     console.log('REGISTER result', result);

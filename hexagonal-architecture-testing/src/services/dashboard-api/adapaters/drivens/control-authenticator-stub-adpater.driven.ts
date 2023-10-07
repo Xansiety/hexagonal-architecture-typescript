@@ -2,8 +2,8 @@ import { ForControlAuthenticating } from '../../ports';
 import { AuthDetails, Permissions } from '../../app/schemas';
 
 const authDetailsMock: AuthDetails = {
-  token: '11das1321dsad',
-  refreshToken: 'd1as21d321as'
+  token: 'token',
+  refreshToken: 'refreshToken'
 };
 
 const permissionsMock: Permissions = {
